@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MemberJoinDAO {
 
     Scanner sc = new Scanner(System.in);
-    List<MemberDTO> members = new ArrayList<>();
+    List<MemberDTO> members = new ArrayList<MemberDTO>();
 
 
     public void run() {

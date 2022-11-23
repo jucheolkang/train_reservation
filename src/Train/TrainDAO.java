@@ -63,15 +63,7 @@ public class TrainDAO {
             System.out.println("결재 횟수가 초과로 결재가 취소 되었습니다.");
         }
         else {
-            System.out.println();
-            System.out.println("================== <표 출력 >==================");
-            System.out.println("출발역 : " + trains.get(select).getStartPlace());
-            System.out.println("도착역 : " + trains.get(select).getEndPlace());
-            System.out.println("출발시간 : " + trains.get(select).getStartTime()+"시");
-            System.out.println("탑승 기차 : " + trains.get(select).getTraiNname());
-            System.out.println("탑승 인원 : " + trains.get(select).getUser_amount()+"명");
-            System.out.println("==============================================");
-            System.out.println();
+            show(select);
         }
 
     }
@@ -79,33 +71,26 @@ public class TrainDAO {
         int cnt = 0;// 0번째 리스트 먼저 탐색하기 때문에 순차적으로 true가 아니라면 실행X
 
         while(trains.get(cnt).isBuy()){
-            System.out.println();
-            System.out.println("================== <표 출력 >==================");
-            System.out.println("출발역 : " + trains.get(cnt).getStartPlace());
-            System.out.println("도착역 : " + trains.get(cnt).getEndPlace());
-            System.out.println("출발시간 : " + trains.get(cnt).getStartTime()+"시");
-            System.out.println("탑승 기차 : " + trains.get(cnt).getTraiNname());
-            System.out.println("탑승 인원 : " + trains.get(cnt).getUser_amount()+"명");
-            System.out.println("==============================================");
-            System.out.println();
+            show(cnt);
             cnt++;
         }
 
     }
+    private void show(int size){
+        System.out.println();
+        System.out.println("================== <표 "+(size+1)+"출력 >==================");
+        System.out.println("출발역 : " + trains.get(size).getStartPlace());
+        System.out.println("도착역 : " + trains.get(size).getEndPlace());
+        System.out.println("출발시간 : " + trains.get(size).getStartTime()+"시");
+        System.out.println("탑승 기차 : " + trains.get(size).getTraiNname());
+        System.out.println("탑승 인원 : " + trains.get(size).getUser_amount()+"명");
+        System.out.println("===============================================");
+        System.out.println();
+
+    }
+
     private  void ticketDel(){
-        int cnt = 0;
-        while(trains.get(cnt).isBuy()){// 출력 코드 메소드로 만들기
-            System.out.println();
-            System.out.println("================== <표"+(cnt+1)+" 출력 >==================");
-            System.out.println("출발역 : " + trains.get(cnt).getStartPlace());
-            System.out.println("도착역 : " + trains.get(cnt).getEndPlace());
-            System.out.println("출발시간 : " + trains.get(cnt).getStartTime()+"시");
-            System.out.println("탑승 기차 : " + trains.get(cnt).getTraiNname());
-            System.out.println("탑승 인원 : " + trains.get(cnt).getUser_amount()+"명");
-            System.out.println("==============================================");
-            System.out.println();
-            cnt++;
-        }
+        ticketShow();
         System.out.print("취소하려고 하는 표의 번호를 입력하세요 : ");
         trains.get(sc.nextInt()-1).setBuy(false);
 
