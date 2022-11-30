@@ -1,4 +1,4 @@
-package Train;
+package org.javaro.lecture;
 
 public class TrainDTO {
     private String traiNname;

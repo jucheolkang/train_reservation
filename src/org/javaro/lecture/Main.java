@@ -1,4 +1,4 @@
-import Member.MemberJoinDAO;
+package org.javaro.lecture;
 
 public class Main {
     public static void main(String[] args) {

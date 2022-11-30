@@ -1,5 +1,5 @@
-package Member;
-import Train.TrainDAO;
+package org.javaro.lecture;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

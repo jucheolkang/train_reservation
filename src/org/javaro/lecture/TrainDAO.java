@@ -1,4 +1,4 @@
-package Train;
+package org.javaro.lecture;
 
 import java.util.ArrayList;
 import java.util.Iterator;

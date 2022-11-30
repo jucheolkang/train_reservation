@@ -1,4 +1,4 @@
-package Member;
+package org.javaro.lecture;
 
 public class MemberDTO {
     private String ID;
